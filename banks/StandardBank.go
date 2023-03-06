@@ -23,7 +23,7 @@ func (b *StandardBank) Deposit(amount float64) {
 }
 
 func (b *StandardBank) Withdraw(amount float64) error {
-	if b.accountBalance-amount < 0 {
+	if b.accountBalance - amount < 0 {
 		return errors.New("Insufficient funds")
 	}
 	b.accountBalance -= amount

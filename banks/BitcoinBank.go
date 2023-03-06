@@ -27,7 +27,7 @@ func (b *BitcoinBank) Deposit(amount float64) {
 func (b *BitcoinBank) Withdraw(amount float64) error {
 	gasFee := generateGasFee(50)
 	toRemove := amount + float64(gasFee)
-	if b.accountBalance-toRemove < 0 {
+	if b.accountBalance - toRemove < 0 {
 		return errors.New("Insufficient funds")
 	}
 	b.accountBalance -= toRemove
